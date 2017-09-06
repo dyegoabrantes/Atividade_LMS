@@ -80,7 +80,10 @@
 		background: #EF9BBF;
 		position: fixed; top: 0; right: 0; left: 0; height: 125px;
 	}
-	p{
-
+	.minhadiv{
+		position:absolute;
+    	top: 50%;
+    	left: 50%;
+    	background-color: whitesmoke;
 	}
 </style>
