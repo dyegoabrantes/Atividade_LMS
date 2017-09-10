@@ -1,8 +1,11 @@
 <style>
 	h1{
+		text-align: center;
 		font-size: 3em;
+		display: block;
 	}
 	section{
+		border: dashed;
 		text-align: justify;
 		margin-top: 13%;
 		margin-bottom: 10%;
@@ -10,18 +13,9 @@
 		margin-right: auto;
 		width: 50%;
 		height: 50%;
-	}
-	footer{
-		position: fixed; bottom: 0; right: 0; left: 0; height: 45px;
-		background: #EF9BBF;
-		padding-left: 5%;
-		padding-right: 5%;
-		padding-bottom: 1%;
-		padding-top: 1%;
-		text-align: center;
-	}			
+	}		
 	article{
-		border: 3px solid #BD771F;
+		border: 3px dotted #BD771F;
 		padding-left: 10%;
 		padding-right: 10%;
 		background: #FEF200;
@@ -29,6 +23,7 @@
 		color: saddlebrown;
 	}
 	nav{
+		border: solid;
 		padding-top: 10px;
 		height: 100%;
 		width: 15%;
@@ -42,6 +37,7 @@
 		color: rosybrown;
 	}
 	aside{
+		border: solid;
 		padding-top: 10px;
 		height: 100%;
 		width: 15%;
@@ -62,20 +58,15 @@
 		color: #BD771F;
 	}
 	.bloquinhos{
+		border: 3px dashed #BD771F;
 		left:  0;	
 		padding: 4px;
 		background-color: #fdf300;
 		border: 20px;
 		margin: 3px;
-		text-align: jus
 	}
-		body{
-		background: skyblue;
-		color: yellow;
-		font-family: 'lobster', cursive;
-		letter-spacing: 2px;
-	}
-		header{
+	header{
+		border: 3px dashed #BD771F;
 		text-align: center;
 		background: #EF9BBF;
 		position: fixed; top: 0; right: 0; left: 0; height: 125px;
@@ -86,4 +77,23 @@
     	left: 50%;
     	background-color: whitesmoke;
 	}
+	body{
+		background: linear-gradient(to bottom, rgba(41,184,229,1) 0%, rgba(188,224,238,1) 100%);
+		color: yellow;
+		font-family: 'lobster', cursive;
+		letter-spacing: 2px;
+		background: url('gradient_bg.png') no-repeat left: '0', right: '0' fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	footer{
+		/* ajuste de posição - não mexa! <3 */
+		/*position: fixed; bottom: 0; right: 0; left: 0; height: 45px; */
+		border: 3px dashed #BD771F;
+		background: #EF9BBF;
+		padding-bottom: 25px;
+		padding-left: 40%;
+	}	
 </style>
