@@ -4,6 +4,13 @@
 		font-size: 3em;
 		display: block;
 	}
+	header{
+		border: 3px dashed #BD771F;
+		text-align: center;
+		background: #EF9BBF;
+		position: fixed; top: 0; right: 0; left: 0; height: 19vh;
+		z-index: 10;
+	}
 	section{
 		border: dashed;
 		text-align: justify;
@@ -28,8 +35,8 @@
 		height: 100%;
 		width: 15%;
 		left: 0;
-		top: 125px;
- 		position: fixed; 
+		top: 20vh;
+ 		position: absolute; 
 		background: lightgoldenrodyellow;
 		text-align: center;
 		margin-top: auto;
@@ -42,8 +49,8 @@
 		height: 100%;
 		width: 15%;
 		right: 0;
-		top: 125px;
- 		position: fixed; 
+		top: 20vh;
+ 		position: absolute; 
 		background: lightgoldenrodyellow;
 		text-align: center;
 		margin-top: auto;
@@ -65,12 +72,6 @@
 		border: 20px;
 		margin: 3px;
 	}
-	header{
-		border: 3px dashed #BD771F;
-		text-align: center;
-		background: #EF9BBF;
-		position: fixed; top: 0; right: 0; left: 0; height: 125px;
-	}
 	.minhadiv{
 		position:absolute;
     	top: 50%;
@@ -91,7 +92,7 @@
 	footer{
 		/* ajuste de posição - não mexa! <3 */
 		/*position: fixed; bottom: 0; right: 0; left: 0; height: 45px; */
-		border: 3px dashed #BD771F;
+		border: 3px dashed black;
 		background: #EF9BBF;
 		padding-bottom: 25px;
 		padding-left: 40%;
