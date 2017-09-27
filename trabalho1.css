@@ -17,7 +17,6 @@ body{
 	padding: 20px;
 	float: right;
 	margin: 20px;
-	background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(181,198,208,0.5) 14%, rgba(207,222,232,0.25) 65%, rgba(224,239,249,0) 100%);
 	border-radius: 15px 15px;
 	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
 }
@@ -25,8 +24,18 @@ body{
 	width: 10vw;
 }
 .navegador_esquerdo>div>p{
+	background-image: url('gatos_magicos_b.jpg');
+	background-position: center;
+	height: 150px;
 	text-align: center;
 	color: floralwhite;
+	cursor: pointer;
+	background-size: cover;
+	transition: background-image 500ms ease-in-out;
+}
+.navegador_esquerdo>div>p:hover{
+	background-image: url('gatos_magicos_a.jpg');
+	background-position: center;
 }
 .barra_direita{
 	padding-bottom: 20px;
@@ -37,7 +46,6 @@ body{
 	padding: 20px;
 	float: left;
 	margin: 20px;
-	background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(181,198,208,0.5) 14%, rgba(207,222,232,0.25) 65%, rgba(224,239,249,0) 100%);
 	border-radius: 15px 15px;
 	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
 }
@@ -46,7 +54,7 @@ body{
 	color: navajowhite;
 }
 .navegador_direita_i{
-	background: whitesmoke;
+
 	color: slategrey;
 	text-decoration: none;
 	padding: 5px;
@@ -54,7 +62,6 @@ body{
 	display: block;
 }
 .navegador_direita_a{
-	background: whitesmoke;
 	color: slategrey;
 	text-decoration: none;
 	padding: 5px;
@@ -63,7 +70,6 @@ body{
 	border-radius: 15px 15px 0 0;
 }
 .navegador_direita_z{
-	background: whitesmoke;
 	color: slategrey;
 	text-decoration: none;
 	padding: 5px;
@@ -75,17 +81,22 @@ body{
 	font-weight: bold;
 	font-size:  18pt;
 	list-style: none;
-	color: whitesmoke;
+	color: #8A433B;
+	background-color: #b2827c;
+	border-radius: 25px 25px 25px 25px;
+	padding: 5px;
+	text-align: center;
 	float: right;
-	margin-right: 3vw
+	margin-right:5vw;
 }
 .botao_dd{
     color: whitesmoke;
     cursor: pointer;
-	background: dimgrey;
+	background: #8A433B;
 	padding: 2vh;
 	border-radius: 15px 15px 0 0;
-	transition: background-color 1s;
+	transition: background-color 500ms;
+	transition: color: 500ms
 }
 .laco{transition: transform 1s}
 .dropdown:hover .laco{
@@ -126,8 +137,15 @@ body{
 	border-radius: 15px 15px 15px 15px;
 }
 .dropdown:hover .botao_dd {
-    background-color: darkslategrey;
+    background-color: whitesmoke;
+    color: darkslategray;
+    font-weight: bold;
 }
 .dropdown:hover .dd_conteudo{
     display: block;
+}
+h2,h3{
+	color: ghostwhite;
+	padding: 5px;
+	text-align: center;
 }
