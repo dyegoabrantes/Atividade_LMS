@@ -1,0 +1,133 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Work Sans', sans-serif;
+}
+body{
+	height: 100vh;
+	background: rgba(0,0,0,1);
+	background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(186,186,186,1) 100%) no-repeat;
+}
+.navegador{
+	padding: 3vh;
+	padding-bottom: 0;
+	background-color: rgba(245, 245, 245, 0.05) ;
+}
+.barra_esquerda{
+	padding: 20px;
+	float: right;
+	margin: 20px;
+	background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(181,198,208,0.5) 14%, rgba(207,222,232,0.25) 65%, rgba(224,239,249,0) 100%);
+	border-radius: 15px 15px;
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
+}
+.navegador_esquerdo>div>img{
+	width: 10vw;
+}
+.navegador_esquerdo>div>p{
+	text-align: center;
+	color: floralwhite;
+}
+.barra_direita{
+	padding-bottom: 20px;
+	float: left;
+	margin: 20px;
+}
+.barra_direita{
+	padding: 20px;
+	float: left;
+	margin: 20px;
+	background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(181,198,208,0.5) 14%, rgba(207,222,232,0.25) 65%, rgba(224,239,249,0) 100%);
+	border-radius: 15px 15px;
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
+}
+.navegador_direita_l{
+	list-style: none;
+	color: navajowhite;
+}
+.navegador_direita_i{
+	background: whitesmoke;
+	color: slategrey;
+	text-decoration: none;
+	padding: 5px;
+	margin: 2px;
+	display: block;
+}
+.navegador_direita_a{
+	background: whitesmoke;
+	color: slategrey;
+	text-decoration: none;
+	padding: 5px;
+	margin: 2px;
+	display: block;
+	border-radius: 15px 15px 0 0;
+}
+.navegador_direita_z{
+	background: whitesmoke;
+	color: slategrey;
+	text-decoration: none;
+	padding: 5px;
+	margin: 2px;
+	display: block;
+	border-radius: 0 0 15px 15px
+}
+.marca{
+	font-weight: bold;
+	font-size:  18pt;
+	list-style: none;
+	color: whitesmoke;
+	float: right;
+	margin-right: 3vw
+}
+.botao_dd{
+    color: whitesmoke;
+    cursor: pointer;
+	background: dimgrey;
+	padding: 2vh;
+	border-radius: 15px 15px 0 0;
+	transition: background-color 1s;
+}
+.laco{transition: transform 1s}
+.dropdown:hover .laco{
+	transform: scale(1.5,1);
+}
+.oculos{transition: transform 1s}
+.dropdown:hover .oculos{
+	transform: scale(1.5,1);
+}
+.palhaco{transition: transform 1s}
+.dropdown:hover .palhaco{
+	transform: scale(1.5,1);
+}
+.shuriken{transition: transform 1s}
+.dropdown:hover .shuriken{
+	transform: rotate(360deg);
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dd_conteudo{
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.75);
+	position: absolute;
+ 	display: none;
+	list-style: none;
+	color: darkslategray;
+	background-color: whitesmoke;
+	border-radius: 0px 15px 15px 15px;
+}
+.dd_conteudo>li{
+	padding: 5px;
+	transition: background-color 1s;
+}
+.dd_conteudo>li:hover{
+	background-color: darkslategray;
+	color: whitesmoke;
+	border-radius: 15px 15px 15px 15px;
+}
+.dropdown:hover .botao_dd {
+    background-color: darkslategrey;
+}
+.dropdown:hover .dd_conteudo{
+    display: block;
+}
