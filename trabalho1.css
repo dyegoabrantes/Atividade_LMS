@@ -4,111 +4,24 @@
 	font-family: 'Work Sans', sans-serif;
 }
 body{
-	height: 100vh;
-	background: rgba(0,0,0,1);
-	background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(186,186,186,1) 100%) no-repeat;
+	background: linear-gradient(#C36657,whitesmoke);
+	text-align: center;
 }
 .navegador{
-	padding: 3vh;
+	text-align: left;
+	padding: 20px;
 	padding-bottom: 0;
-	background-color: rgba(245, 245, 245, 0.05) ;
-}
-.barra_esquerda{
-	padding: 20px;
-	float: right;
-	margin: 20px;
-	border-radius: 15px 15px;
-	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
-}
-.navegador_esquerdo>div>img{
-	width: 10vw;
-}
-.navegador_esquerdo>div>p{
-	background-image: url('gatos_magicos_b.jpg');
-	background-position: center;
-	height: 150px;
-	text-align: center;
-	color: floralwhite;
-	cursor: pointer;
-	background-size: cover;
-	transition: background-image 500ms ease-in-out;
-}
-.navegador_esquerdo>div>p:hover{
-	background-image: url('gatos_magicos_a.jpg');
-	background-position: center;
-}
-.barra_direita{
-	padding-bottom: 20px;
-	float: left;
-	margin: 20px;
-}
-.barra_direita{
-	padding: 20px;
-	float: left;
-	margin: 20px;
-	border-radius: 15px 15px;
-	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
-}
-.navegador_direita_l{
-	list-style: none;
-	color: navajowhite;
-}
-.navegador_direita_i{
-
-	color: slategrey;
-	text-decoration: none;
-	padding: 5px;
-	margin: 2px;
-	display: block;
-}
-.navegador_direita_a{
-	color: slategrey;
-	text-decoration: none;
-	padding: 5px;
-	margin: 2px;
-	display: block;
-	border-radius: 15px 15px 0 0;
-}
-.navegador_direita_z{
-	color: slategrey;
-	text-decoration: none;
-	padding: 5px;
-	margin: 2px;
-	display: block;
-	border-radius: 0 0 15px 15px
-}
-.marca{
-	font-weight: bold;
-	font-size:  18pt;
-	list-style: none;
-	color: #8A433B;
-	background-color: #b2827c;
-	border-radius: 25px 25px 25px 25px;
-	padding: 5px;
-	text-align: center;
-	float: right;
-	margin-right:5vw;
+	background-color: #C36657;
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.25	);
 }
 .botao_dd{
-    color: whitesmoke;
+    color: darkslategray;
     cursor: pointer;
-	background: #8A433B;
-	padding: 2vh;
+	background: whitesmoke;
+	padding: 5px;
 	border-radius: 15px 15px 0 0;
 	transition: background-color 500ms;
 	transition: color: 500ms
-}
-.laco{transition: transform 1s}
-.dropdown:hover .laco{
-	transform: scale(1.5,1);
-}
-.oculos{transition: transform 1s}
-.dropdown:hover .oculos{
-	transform: scale(1.5,1);
-}
-.palhaco{transition: transform 1s}
-.dropdown:hover .palhaco{
-	transform: scale(1.5,1);
 }
 .shuriken{transition: transform 1s}
 .dropdown:hover .shuriken{
@@ -119,33 +32,175 @@ body{
 	display: inline-block;
 }
 .dd_conteudo{
+	z-index: 10;
 	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.75);
 	position: absolute;
- 	display: none;
+ 	visibility: hidden;
 	list-style: none;
-	color: darkslategray;
-	background-color: whitesmoke;
+	color: whitesmoke;
+	background-color: darkslategray;
 	border-radius: 0px 15px 15px 15px;
+    max-height: 0%;
+    transition: max-height 1s ease-out;
+    overflow: hidden; 
 }
 .dd_conteudo>li{
 	padding: 5px;
 	transition: background-color 1s;
 }
 .dd_conteudo>li:hover{
-	background-color: darkslategray;
-	color: whitesmoke;
+	background-color: whitesmoke;
+	color: darkslategray;
 	border-radius: 15px 15px 15px 15px;
 }
 .dropdown:hover .botao_dd {
-    background-color: whitesmoke;
-    color: darkslategray;
+    background-color: darkslategray;
+    color: whitesmoke;
     font-weight: bold;
 }
 .dropdown:hover .dd_conteudo{
-    display: block;
+    visibility: visible;
+    max-height: 100vh;
+    transition: max-height 1s ease-in;
 }
-h2,h3{
+h2{
+	position: relative;
 	color: ghostwhite;
-	padding: 5px;
+	bottom: 4pt;
 	text-align: center;
+	left: 0;
+	right: 0;
+}
+.left_aside{
+	background: linear-gradient(#C36657, whitesmoke);
+	padding: 20px;
+	margin-top: 20px;
+	margin-right: 10px;
+	float: right;
+	border-radius: 15px 15px;
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
+}
+.gatolixa{
+	position: relative;
+}
+.gatosome{
+	margin-top: 20px;
+	background-image: url('gatos_magicos_b.jpg');
+	background-position: center;
+	height: 150px;
+	text-align: center;
+	color: floralwhite;
+	cursor: pointer;
+	background-size: cover;
+	transition: background-image 500ms ease-in-out;
+}
+.gatosome:hover{
+	background-image: url('gatos_magicos_a.jpg');
+	background-position: center;
+}
+.h3{
+	background-color: rgba(0, 0, 0, 0.5)
+}
+.salem{
+	margin-top: 20px;
+	background-image: url('gatolixa.png');
+	background-position: center;
+	height: 150px;
+	text-align: center;
+	color: floralwhite;
+	cursor: pointer;
+	background-size: cover;
+	transition: background-image 500ms ease-in-out;
+}
+.salem:hover{
+	background-position: center;
+	background-image: url('gatolixa.gif');
+}
+.gatoderrete{
+	margin-top: 20px;
+	background-image: url('gatoderrete.jpg');
+	background-position: center;
+	height: 150px;
+	text-align: center;
+	color: floralwhite;
+	cursor: pointer;
+	background-size: cover;
+}
+.gatoderrete:hover{
+	background-position: center;
+	background-image: url('gatoderrete.gif');
+}
+.right_aside{
+	background: linear-gradient(#C36657, whitesmoke);
+	padding: 20px;
+	margin-top: 20px;
+	margin-left: 10px;
+	float: left;
+	border-radius: 15px 15px;
+	box-shadow: -1px 25px 28px -9px rgba(0,0,0,0.5);
+}
+.pidao1, .pidao2, .pidao3{
+	margin-top: 20px;
+	background-position: center;
+	height: 150px;
+	text-align: center;
+	color: floralwhite;
+	cursor: pointer;
+	background-size: cover;
+}
+.pidao1{
+	background-image: url('pidao1.jpg')
+}
+.pidao2{
+	background-image: url('pidao2.jpg')
+}
+.pidao3{
+	background-image: url('pidao3.jpg')
+}
+.areaaberta{
+	display: inline-block;
+	height: 1000px;
+	margin: 40px;
+	background-color: #C36657;
+}
+footer{
+	height: 100px;
+	background-color: #C36657;
+}
+.gato{
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	animation: girar 10s infinite;
+}
+@keyframes girar{
+	0%{}
+	25%{transform: translate(25px, 250px) rotate(180deg)}
+	50%{transform: translate(250px, 180px) rotate(360deg)}
+	100%{}
+}
+@media only screen and (max-width: 599px) {
+	.right_aside{
+		margin-left: 0;
+		display: block;
+		float: none;
+		border-radius: 0;
+	}
+	.right_aside>div{
+		display: inline-block;
+	}
+	.left_aside{
+		margin-right: 0;
+		display: block;
+		float: none;
+		border-radius: 0;
+	}
+	.left_aside>div{
+		display: inline-block;
+	}
+	.areaaberta{
+		margin: 20px;
+	}
+
 }
