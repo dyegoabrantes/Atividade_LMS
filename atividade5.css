@@ -53,7 +53,7 @@ header{
 			outline: none;
 			transition: background-color 0.5s ease-out;
 		}
-		.botao_menu.active{
+		.botao_menu.active {
 			color: navajowhite;
 			background-color: darkslategray;
 		}
@@ -99,6 +99,5 @@ header{
 	}
 	.botao_menu>h2{
 		white-space: nowrap;
-		color: darkslategray;
 	}
 }

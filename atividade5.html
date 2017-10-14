@@ -61,6 +61,7 @@
 		var j;
 		for (j = 0; j < acc.length; j++) {
   			acc2[j].onclick = function() {
+  				this.classList.toggle("active");
     			var conteudo2 = this.nextElementSibling;
     			if (conteudo2.style.maxWidth){
       				conteudo2.style.maxWidth = null;
