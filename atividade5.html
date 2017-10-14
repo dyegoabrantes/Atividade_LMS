@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Atividade 5</title>
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!-- <script src="atividade5.js"></script> -->
+	<link rel="stylesheet" href="atividade5.css">
+</head>
+<body>
+	<header>
+		<span>Flores da Caatinga</span>
+	</header>
+	<button class="botao_sanduiche">&#9776;</button>
+	<nav class="nav1">
+		<div class="menu_acordeons">
+			<h2>Belezuras por cor</h2>
+			<div id="acordeon">
+				<button class="botao_menu"><h2 >Brancas</h2></a></button>
+				<div class="acordeon_conteudo">
+					<img src="http://3.bp.blogspot.com/-M7CZ9UA5ErA/UfEBpYmOunI/AAAAAAAAA90/F3StDI1wj2c/s1600/mandacaru.jpg" width="200px;">
+					<img src="http://3.bp.blogspot.com/-GkmmUgtNDsA/Ue6lfMiAk7I/AAAAAAAAA0k/NHISCU4GJHA/s1600/Imagem46.png" width="200px">
+				</div>
+			</div>
+			<div id="acordeon">
+				<button class="botao_menu"><h2 >Rosas</h2></a></button>
+				<div class="acordeon_conteudo">
+					<img src="http://1.bp.blogspot.com/-YDYeiQ8R9zs/Ue6jXTmFvjI/AAAAAAAAAms/ftPN8K-kcvk/s640/Imagem1.png" width="200px;">
+					<img src="http://4.bp.blogspot.com/-yEC4XxSiuh0/UfD_aeDHxWI/AAAAAAAAA8k/9dPjsz9MiPI/s640/PaineiraRosaFlor.jpg" width="200px">
+				</div>
+			</div>
+			<div id="acordeon">
+				<button class="botao_menu"><h2 >Amarelas</h2></a></button>
+				<div class="acordeon_conteudo">
+					<img src="http://3.bp.blogspot.com/-zjXG93bZfJQ/Ue6k0ZrY_gI/AAAAAAAAAxc/V7rytLLlAi8/s640/Imagem22.png" width="200px;">
+					<img src="http://3.bp.blogspot.com/-WEr7poOv1YU/Ue6mTAD2XoI/AAAAAAAAA58/8_8SmhXvu80/s640/Imagem82.png" width="200px">
+				</div>
+			</div>
+		</div>
+	</nav>
+	<script type="text/javascript">
+		// Este escript a seguir controla o acordeon em telas de 480px de largura ou mais;
+		var acc = document.getElementsByClassName("botao_menu");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+  			acc[i].onclick = function() {
+    			this.classList.toggle("active");
+    			var conteudo = this.nextElementSibling;
+    			if (conteudo.style.maxHeight){
+      				conteudo.style.maxHeight = null;
+    			} else {
+      				conteudo.style.maxHeight = conteudo.scrollHeight + "px";
+    			} 
+  			}
+		}
+		// Este escript a seguir controla o acordeon em telas de largura menor que 480px;
+		var acc2 = document.getElementsByClassName("botao_sanduiche");
+		var j;
+		for (j = 0; j < acc.length; j++) {
+  			acc2[j].onclick = function() {
+    			var conteudo2 = this.nextElementSibling;
+    			if (conteudo2.style.maxWidth){
+      				conteudo2.style.maxWidth = null;
+    			} else {
+      				conteudo2.style.maxWidth = conteudo2.scrollWidth + "px";
+    			} 
+  			}
+		}
+	</script>
+</body>
+</html>

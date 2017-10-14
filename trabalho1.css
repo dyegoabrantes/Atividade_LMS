@@ -209,3 +209,9 @@ footer{
 	background-image: url('gatonija1.jpg');
 	background-size: cover;
 }
+.gatoninja2{
+	width: 200px;
+	height: 200px;
+	background-image: url('gatonija2.jpg');
+	background-size: cover;
+}

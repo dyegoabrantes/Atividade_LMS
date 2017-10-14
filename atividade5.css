@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+body{
+	background-color: navajowhite;
+}
+header{
+	color: darkslategray;
+	background-color: darkseagreen;
+	padding: 10px;
+	height: 36px;
+
+}
+	header>span{
+		font-family: 'Fascinate Inline', cursive;
+		font-size: 20pt;
+		margin-left: 10px;
+	}
+.botao_sanduiche{
+	display: none;
+}
+.nav1{
+	float: left;
+	position: relative;
+	background-color: rgba(178, 	154, 	121, 0.25);
+	max-width: 300px;
+	height: 100vh;
+	transition: max-width:  0.5s ease-out;
+/* 	margin-top: 20px;
+	margin-left: 10px; */
+	overflow: auto;
+}
+.menu_acordeons{
+
+}
+.menu_acordeons, .menu_acordeons>h2{
+	text-align: center;
+	padding-bottom: 10px;
+	color: darkslategray;
+
+}
+	#acordeon{
+	
+	}
+		.botao_menu{
+			text-decoration: none;
+			color: darkslategray;
+			border:none;
+			width: 100%;
+			cursor: pointer;
+			outline: none;
+			transition: background-color 0.5s ease-out;
+		}
+		.botao_menu.active{
+			color: navajowhite;
+			background-color: darkslategray;
+		}
+		.botao_menu:hover{
+			text-decoration: none;
+			color: whitesmoke;
+			background-color: darkseagreen;
+			border:none;
+			width: 100%;
+			cursor: pointer;
+			outline: none;
+			transition: background-color 0.5s ease-in;
+		}
+		.acordeon_conteudo{
+			margin-top: 5px;
+			color: whitesmoke;
+    		max-height: 0;
+    		transition: max-height 0.5s ease-out;
+    		overflow: hidden;
+		}
+@media only screen and (max-width: 479px){
+	.nav1{
+		float: left;
+		position: relative;
+		background-color: rgba(178, 	154, 	121, 0.25);
+		max-width: 0;
+		transition: max-width  0.5s ease-in-out;
+		height: 100vh;
+		overflow: hidden;
+	}
+	.botao_sanduiche{
+		position: relative;
+		text-decoration: none;
+		width: 50px;
+		height: 50px;
+		border:none;
+		cursor: pointer;
+		outline: none;
+		display: inline-block;
+	}
+	.menu_acordeons>h2{
+		white-space: nowrap;
+	}
+	.botao_menu>h2{
+		white-space: nowrap;
+		color: darkslategray;
+	}
+}
