@@ -43,6 +43,8 @@ header{
 }
 .conteudo{
 	float: left;
+	position: absolute;
+	display: inline-block;
 }
 	#acordeon{
 	
