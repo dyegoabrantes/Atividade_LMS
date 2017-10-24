@@ -139,6 +139,7 @@
 				display: none;
 			}
 	#conversas{
+		position: relative;
 		float: right;
 		width: 600px;
 		height: 550px;
@@ -147,13 +148,34 @@
 		background-size: cover;
 	}
 	.chat{
-        position: relative;
+        position: absolute;
         background-color: whitesmoke;
         width: 580px;
         height: 60px;
         margin-top: 480px;
         margin-left: 10px;
         display: none;
-        animation-name: splash;
-        animation-duration: 600ms;
+    }
+    	.panel>div{
+    		text-align: left;
+    		overflow-wrap: break-word;
+    	}
+    	.panel-heading{
+    		padding:5px;
+    		max-width: 310px;
+    		font-weight: bold;
+    		background-color: floralwhite;
+			margin: 10px 0 0px 10px;
+    	}
+    	.panel-body{
+    		padding: 10px;
+    		max-width: 300px;
+    		margin: 0 0 10px 10px; 
+			background-color: white;
+    	}
+    .minha-mensagem{
+    	display: inline-block;
+    	margin: 0;
+    	padding: 0;
+    	display: none;
     }

@@ -27,7 +27,7 @@
 				<span>Amigos</span>
 				<ul class="contacts">
 					<div class="contact open_chat">
-	            		<span id="nome_contato">João</span>
+	            		<span class="nome_contato">João</span>
 	            		<span> - </span>
 	            		<span class="email_contato">joao@gmail.com</span>
 	        		</div>
@@ -35,13 +35,47 @@
 			</div>
 			<div id="conversas">
 				<div class="close_chat">X</div>
+				<div class="panel panel-default">
+  					<div class="panel-heading">Eu</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+				<div class="panel panel-default">
+  						<div class="panel-heading">fefwef</div>
+  						<div class="panel-body">
+    						Bootstrap (currently v3.3.7) has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs
+  						</div>
+					</div>
 				<div class="chat">
-					
+					heloooo
 				</div>
 			</div>
 		</div>
+		<!-- <ul>
+			<li>Oi?</li>
+			<li>A quanto tempo não nos falamos</li>
+			<li>Hooooooooooow does it feel?</li>
+			<li>Change is always given to the searchers who explore</li>
+			<li>Should I stay or should I go?</li>
+			<li>Quantos anos vc tem?</li>
+			<li>Essa conversa não vai nos levar a lugar nenhum.</li>
+			<li>I chose randomly</li>
+			<li>Deus me Defenderay! há rarararararara</li>
+			<li>Chame minha mãe lá, doido!</li>
+			<li>Por favor, Silvio Santos</li>
+			<li>Foi óntimon</li>
+			<li>Exatamentchy</li>
+			<li>Twenty Reais</li>
+			<li>Que Santa Fé?</li>
+			<li>Existem verdades mais verdadeiras do que a própria verdade. (Paulo Coelho)</li>
+			<li>In redor dos buraco tudo é bêra (Ariano Suassuna)</li>
+			<li>Ups! I. Did it again</li>
+			<li>O Marida da Lady Gaga seria Lord Gaga?(Ariano Suassuna)</li>
+			<li>Isso foi uma pergunta ou uma resposta?</li>
+			<li>Existem pessoas mais importantes no mundo, você sabe disso.</li>
+		</ul> -->
 		<script>
-	        let open_chat = document.querySelectorAll('.open_chat');
+	        let open_chat = document.getElementsByClassName('open_chat');
 	        let chat = document.querySelector('.chat');
 	        let close_chat = document.querySelector('.close_chat');
 	        let contacts = document.querySelector(".contacts");
@@ -52,19 +86,23 @@
 	            close_chat.style.display = 'none';
 	            document.getElementById("destinatario").style.visibility="hidden";
 	        }
-	        function open_chatAction(){
-	        	for (var i = Things.length - 1; i >= 0; i--) {
-	        		chat.style.display = 'block';
-	            	close_chat.style.display = 'block';
-	            	document.getElementById("destinatario").style.visibility="visible";
-	            	let v = document.getElementById("nome_contato").textContent;
-	            	document.getElementById("nome_destinatario").textContent=" "+v;
-	        	}
-	            
+	        function open_chatAction(a){
+	        	let id = a.getElementsByClassName('nome_contato')[0].textContent;		
+	        	chat.style.display = 'block';
+	            close_chat.style.display = 'block';
+	            document.getElementById("destinatario").style.visibility="visible";
+	            document.getElementById("nome_destinatario").textContent=" "+id;  
 	        }
-	        open_chat.addEventListener('click', function(){
-	            open_chatAction();
-	        });
+	        atualizar();
+	        function atualizar(){
+	        	for (let i = 0; i <open_chat.length; i++) {
+	        		open_chat[i].addEventListener('click', function(){
+	            	open_chatAction(open_chat[i]);
+	        		})
+	        	}
+	        }
+	        
+
 	        close_chat.addEventListener('click', function(){
 	            if (chat.style.display = 'block') {
 	            	closeChat();
@@ -115,9 +153,11 @@
 	            span2.appendChild(text2);
 	            contact.appendChild(span1);
 	            contact.appendChild(span2);
+	            span1.classList.add("nome_contato")
 	            contact.classList.add("contact")
 	            contact.classList.add("open_chat")
 	            contacts.appendChild(contact);
+	            atualizar();
 	        }
 	        
 	        let adicionarAmigo = document.querySelector("#adicionar_amigo");
