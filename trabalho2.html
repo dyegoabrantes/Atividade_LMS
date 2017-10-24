@@ -21,12 +21,17 @@
 	        	<div class="modal_overlay"></div>
 	        	<div class="modal_adicionar_amigo"></div>
 	        	<button class="modal_close">X</button>
+	        	<input class="input_contato" id="inputNome" type="text" name="" placeholder="Digite o nome do contato">
+	        	<input class="input_contato" id="inputEmail" type="text" name="" placeholder="Digite o E-mail do contato">
+	        	<button class="input_contato" id="submeter">Cadastrar</button>
 				<span>Amigos</span>
-				<div class="contact open_chat">
-	            	<span id="nome_contato">João</span>
-	            	<span> - </span>
-	            	<span class="email_contato">joao@gmail.com</span>
-	        	</div>
+				<ul class="contacts">
+					<div class="contact open_chat">
+	            		<span id="nome_contato">João</span>
+	            		<span> - </span>
+	            		<span class="email_contato">joao@gmail.com</span>
+	        		</div>
+				</ul>
 			</div>
 			<div id="conversas">
 				<div class="close_chat">X</div>
@@ -36,23 +41,26 @@
 			</div>
 		</div>
 		<script>
-	        let open_chat = document.querySelector('.open_chat');
+	        let open_chat = document.querySelectorAll('.open_chat');
 	        let chat = document.querySelector('.chat');
 	        let close_chat = document.querySelector('.close_chat');
 	        let contacts = document.querySelector(".contacts");
 	        let nome_destinatario = document.querySelector('.nome_destinatario');
+	        
 	        function closeChat(){
 	            chat.style.display = 'none';
 	            close_chat.style.display = 'none';
 	            document.getElementById("destinatario").style.visibility="hidden";
 	        }
 	        function open_chatAction(){
-	            chat.style.display = 'block';
-	            close_chat.style.display = 'block';
-	            document.getElementById("destinatario").style.visibility="visible";
-
-	            let v = document.getElementById("nome_contato").textContent;
-	            document.getElementById("nome_destinatario").textContent=" "+v;
+	        	for (var i = Things.length - 1; i >= 0; i--) {
+	        		chat.style.display = 'block';
+	            	close_chat.style.display = 'block';
+	            	document.getElementById("destinatario").style.visibility="visible";
+	            	let v = document.getElementById("nome_contato").textContent;
+	            	document.getElementById("nome_destinatario").textContent=" "+v;
+	        	}
+	            
 	        }
 	        open_chat.addEventListener('click', function(){
 	            open_chatAction();
@@ -62,57 +70,64 @@
 	            	closeChat();
 	            }
 	        })
-	        // function addContact(name, email){
-	        //     let contact = document.createElement("div");
-	        //     let span1 = document.createElement("span");
-	        //     let span2 = document.createElement("span");
-	        //     let text1 = document.createTextNode(name);
-	        //     let text2 = document.createTextNode(" - " + email);
-	        //     span1.appendChild(text1);
-	        //     span2.appendChild(text2);
-	        //     contact.appendChild(span1);
-	        //     contact.appendChild(span2);
-	        //     contact.classList.add("contact")
-	        //     contacts.appendChild(contact);
-	        // }
 	        
-	        // let submitForm = document.querySelector("#submit-form");
-	        // let nomeInput = document.querySelector("#nome");
-	        // let emailInput = document.querySelector("#email");
-	        // submitForm.addEventListener('click',function(){
-	        //     event.preventDefault();
-	        //     addContact(nomeInput.value, emailInput.value);
-	        //     closeChat();
-	        // });
 	        let openModal = document.querySelector(".open_modal");
         	let modal = document.querySelector('.modal_adicionar_amigo');
         	let modalOverlay = document.querySelector('.modal_overlay');
     		let modalClose = document.querySelector('.modal_close');
-    		
+    		let inputContato = document.querySelectorAll('.input_contato');
+    		let submeter = document.getElementById('submeter');
+
     		function closeModal(){
    		    	modal.style.display = 'none';
     	    	modalOverlay.style.display = 'none';
     	    	modalClose.style.display = 'none';
-   	        	nomeInput.value = "";
-	        	emailInput.value = "";
-        	}
+    	    	for (let i = 0; i <=2; i++) {
+            		inputContato[i].style.display = 'none';
+            		inputContato[i].value = "";
+            	};
+        	};
+
         	function openModalAction(){
             	modal.style.display = 'block';
             	modalOverlay.style.display = 'block';
             	modalClose.style.display = 'block';
+            	for (let i = 0; i <= 2; i++) {
+            		inputContato[i].style.display = 'block';
+            	};
         	}
+
         	openModal.addEventListener('click', function(){
             	openModalAction();
         	});
+
         	modalClose.addEventListener('click', function(){
             	closeModal();
-
-        	})
-        	window.addEventListener('click',function(){
-            	if(event.target==modalOverlay){
-                	closeModal();
-            	}
         	});
+
+        	function addContact(name, email){
+	            let contact = document.createElement("div");
+	            let span1 = document.createElement("span");
+	            let span2 = document.createElement("span");
+	            let text1 = document.createTextNode(name);
+	            let text2 = document.createTextNode(" - " + email);
+	            span1.appendChild(text1);
+	            span2.appendChild(text2);
+	            contact.appendChild(span1);
+	            contact.appendChild(span2);
+	            contact.classList.add("contact")
+	            contact.classList.add("open_chat")
+	            contacts.appendChild(contact);
+	        }
+	        
+	        let adicionarAmigo = document.querySelector("#adicionar_amigo");
+	        let nomeInput = document.querySelector("#inputNome");
+	        let emailInput = document.querySelector("#inputEmail");
+	        submeter.addEventListener('click',function(){
+	            event.preventDefault();
+	            addContact(nomeInput.value, emailInput.value);
+	            closeModal();
+	        });
 	    </script>
 	</body>
 

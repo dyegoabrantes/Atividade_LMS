@@ -92,6 +92,30 @@
 				user-select: none;
 				display: none;
 			}
+			.input_contato{
+				display: none;
+			}
+			#inputNome, #inputEmail{
+				width: 280px;
+				height: 30px;
+				background-color: #dcdcdc;
+				position: absolute;
+			}
+				#inputNome{
+					bottom: 350px;
+					right: 10px;
+				}
+				#inputEmail{
+					bottom: 310px;
+					right: 10px;
+				}
+				#submeter{
+					width: 100px;
+					height: 30px;
+					position: absolute;
+					bottom: 270px;
+					left: 95px;
+				}
 		.open_chat{
 			user-select: none;
 			cursor: pointer;
