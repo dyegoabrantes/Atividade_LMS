@@ -129,14 +129,6 @@
 					bottom: 310px;
 					right: 10px;
 				}
-				/* #submeter{
-					cursor: pointer;
-					width: 100px;
-					height: 30px;
-					position: absolute;
-					bottom: 270px;
-					left: 95px; */
-				}
 		.open_chat{
 			user-select: none;
 			cursor: pointer;
@@ -186,7 +178,9 @@
 			width: 500px;
 			height: 80px;
 			margin: 10px 5px 10px 10px;
-			color: slateblue;
+			color: black;
+			font-weight: bold;
+			font-size: 17pt;
 			resize: none;
 		}
 		#enviar-mensagem{
@@ -201,10 +195,13 @@
     		text-align: left;
     		overflow-wrap: break-word;
     	}
+    	.panel{
+    		text-align: left;
+    		font-weight: bold;
+    	}
     	.panel-heading{
     		padding:5px;
     		max-width: 310px;
-    		font-weight: bold;
     		background-color: floralwhite;
 			margin: 10px 0 0px 10px;
     	}

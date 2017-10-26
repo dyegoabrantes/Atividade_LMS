@@ -86,6 +86,7 @@
 	        	for (let i = 0; i <open_chat.length; i++) {
 	        		open_chat[i].addEventListener('click', function(){
 	            	open_chatAction(open_chat[i]);
+
 	        		})
 	        	}
 	        }
@@ -137,7 +138,7 @@
 	            let text1 = document.createTextNode(name);
 	            let text2 = document.createTextNode(" - " + email);
 				let list1 = document.createElement("ul");
-	            span1.appendChild(text1);
+				span1.appendChild(text1);
 	            span2.appendChild(text2);
 	            contact.appendChild(span1);
 	            contact.appendChild(span2);
@@ -163,7 +164,6 @@
 			let enviarMensagem = document.querySelector('#enviar-mensagem');
 
 			enviarMensagem.addEventListener('click', function(){
-
 				let panelHeading = document.createElement("div");
 				let panelBody = document.createElement("div");
 				let liContainer = document.createElement("li");
@@ -172,12 +172,17 @@
 				let remetente = document.createTextNode('Eu');
 				panelHeading.classList.add("panel-heading");
 				panelBody.classList.add("panel-body");
+				panelHeading.classList.add("panel");
+				panelBody.classList.add("panel");
 				panelBody.appendChild(contido);
 				panelHeading.appendChild(remetente);
 				liContainer.appendChild(panelHeading);
 				liContainer.appendChild(panelBody);
 				listaMensagens.appendChild(liContainer);
-				
+				document.querySelector('#textbox_inputtext').value='';
+				let recuperalista = open_chat[0].lastElementChild;
+				recuperalista.appendChild(liContainer);
+				console.log(recuperalista);
 			})
 	    </script>
 	</body>
