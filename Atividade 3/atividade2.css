@@ -1,0 +1,99 @@
+<style>
+	h1{
+		text-align: center;
+		font-size: 3em;
+	}
+	header{
+		border: 3px dashed #BD771F;
+		text-align: center;
+		background: #EF9BBF;
+		position: fixed; top: 0; right: 0; left: 0; height: 19vh;
+		z-index: 10;
+	}
+	section{
+		border: dashed;
+		text-align: justify;
+		margin-top: 13%;
+		margin-bottom: 10%;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+		height: 50%;
+	}		
+	article{
+		border: 3px dotted #BD771F;
+		padding-left: 10%;
+		padding-right: 10%;
+		background: #FEF200;
+		margin: 1%;
+		color: saddlebrown;
+	}
+	nav{
+		border: solid;
+		padding-top: 10px;
+		height: 100%;
+		width: 15%;
+		left: 0;
+		top: 20vh;
+ 		position: absolute; 
+		background: lightgoldenrodyellow;
+		text-align: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		color: rosybrown;
+	}
+	aside{
+		border: solid;
+		padding-top: 10px;
+		height: 100%;
+		width: 15%;
+		right: 0;
+		top: 20vh;
+ 		position: absolute; 
+		background: lightgoldenrodyellow;
+		text-align: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		color: rosybrown;
+	}
+	a:link {
+	 	text-decoration: none;
+	 	color: deeppink;
+	}	
+	a:visited {
+		color: #BD771F;
+	}
+	.bloquinhos{
+		border: 3px dashed #BD771F;
+		left:  0;	
+		padding: 4px;
+		background-color: #fdf300;
+		border: 20px;
+		margin: 3px;
+	}
+	.minhadiv{
+		position:absolute;
+    	top: 50%;
+    	left: 50%;
+    	background-color: whitesmoke;
+	}
+	body{
+		background: linear-gradient(to bottom, rgba(41,184,229,1) 0%, rgba(188,224,238,1) 100%);
+		color: yellow;
+		font-family: 'lobster', cursive;
+		letter-spacing: 2px;
+		background: url('gradient_bg.png') no-repeat left: '0', right: '0' fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	footer{
+		/* ajuste de posição - não mexa! <3 */
+		/*position: fixed; bottom: 0; right: 0; left: 0; height: 45px; */
+		border: 3px dashed black;
+		background: #EF9BBF;
+		padding-bottom: 25px;
+		padding-left: 40%;
+	}	
+</style>
