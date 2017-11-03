@@ -13,22 +13,22 @@
 		<div id="center_area">
 			<header>
 				<h1 id="nome_app" >Silhouette</h1>
-				<div id="destinatario">Em uma conversa com:<span id="nome_destinatario"></span></div>
+				<div id="destinatario"><span id="nome_destinatario"></span></div>
 				<div class="button login_button">Entrar</div>
 			</header>
 			<div class="amigos">
-				<button class="open_modal">Adicionar Amigo</button>
+				<button class="open_modal">Criar Grupo</button>
 	        	<div class="modal_overlay"></div>
 	        	<div class="modal_adicionar_amigo"></div>
 	        	<button class="modal_close">X</button>
-	        	<input class="input_contato" id="inputNome" type="text" name="" placeholder="Digite o nome do contato">
-	        	<input class="input_contato" id="inputEmail" type="text" name="" placeholder="Digite o E-mail do contato">
+	        	<input class="input_contato" id="inputNome" type="text" name="" placeholder="Digite o nome do grupo">
+	        	<input class="input_contato" id="inputEmail" type="text" name="" placeholder="Digite o id">
 	        	<button class="input_contato" id="submeter">Cadastrar</button>
-				<span>Amigos</span>
+				<span>Grupos</span>
 				<ul class="contacts">
 					<li>
 						<div class="contact open_chat">
-							<span class="nome_contato">João</span>
+							<span class="nome_contato">Grupo da UFC</span>
 							<span> - </span>
 							<span class="email_contato">joao@gmail.com</span>
 							<ul class="lista-mensagens">
@@ -51,9 +51,7 @@
 			</div>
 			<div id="conversas">
 				<div class="close_chat">X</div>
-				<ul class="lm-ativa">
-					
-				</ul>
+				<ul class="lm-ativa"></ul>
 				<div class="textbox">
 					<textarea id="textbox_inputtext" name="Text1" cols="40" rows="5"></textarea>
 					<button id="enviar-mensagem" type="submit">Enviar</button>
@@ -61,6 +59,16 @@
 			</div>
 		</div>
 		<script>
+
+			let dataRequest =  new XMLHttpRequest();
+			dataRequest.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					console.log(JSON.parse(this.responseText));
+					// document.getElementById("").innerHTML = this.responseText;
+				}
+			}
+			dataRequest.open("GET", "http://rest.learncode.academy/api/dyego/groups", true);
+			dataRequest.send();
 
 	        let open_chat = document.getElementsByClassName('open_chat');
 	        let chat = document.querySelector('.textbox');
@@ -164,25 +172,30 @@
 			let enviarMensagem = document.querySelector('#enviar-mensagem');
 
 			enviarMensagem.addEventListener('click', function(){
+				let panel = document.createElement("div");
 				let panelHeading = document.createElement("div");
 				let panelBody = document.createElement("div");
 				let liContainer = document.createElement("li");
 				let conteudo = document.querySelector('#textbox_inputtext').value;
 				let contido = document.createTextNode(conteudo);
 				let remetente = document.createTextNode('Eu');
+				panel.classList.add("panel");
+				panel.classList.add("mensagemminha");
 				panelHeading.classList.add("panel-heading");
 				panelBody.classList.add("panel-body");
 				panelHeading.classList.add("panel");
 				panelBody.classList.add("panel");
 				panelBody.appendChild(contido);
 				panelHeading.appendChild(remetente);
-				liContainer.appendChild(panelHeading);
-				liContainer.appendChild(panelBody);
+				panel.appendChild(panelHeading);
+				panel.appendChild(panelBody);
+				liContainer.appendChild(panel);
 				listaMensagens.appendChild(liContainer);
 				document.querySelector('#textbox_inputtext').value='';
-				let recuperalista = open_chat[0].lastElementChild;
-				recuperalista.appendChild(liContainer);
-				console.log(recuperalista);
+				let recuperaMensagem = liContainer.cloneNode(true);
+				
+				
+				// console.log(recuperaMensagem);
 			})
 	    </script>
 	</body>

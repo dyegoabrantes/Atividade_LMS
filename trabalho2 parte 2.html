@@ -1,0 +1,237 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Trabalho 2 - Parte 2</title>
+		<link rel="stylesheet" href="trabalho2.css">
+	</head>
+	<body>
+		<div id="center_area">
+			<header>
+				<h1 id="nome_app" >Silhouette</h1>
+				<div id="destinatario"><span id="nome_destinatario"></span></div>
+				<div class="button login_button">Entrar</div>
+			</header>
+			<div class="amigos">
+				<button class="open_modal">Criar Grupo</button>
+	        	<div class="modal_overlay"></div>
+	        	<div class="modal_adicionar_amigo"></div>
+	        	<button class="modal_close">X</button>
+	        	<input class="input_contato" id="inputNome" type="text" name="" placeholder="Digite o nome do grupo">
+	        	<input class="input_contato" id="inputEmail" type="text" name="" placeholder="Digite o id">
+	        	<button class="input_contato" id="submeter">Cadastrar</button>
+				<span>Grupos</span>
+				<ul class="contacts">
+					
+				</ul>
+			</div>
+			<div id="conversas">
+				<div class="close_chat">X</div>
+				<ul class="lm-ativa"></ul>
+				<div class="textbox">
+					<textarea id="textbox_inputtext" name="Text1" cols="40" rows="5"></textarea>
+					<button id="enviar-mensagem" type="submit">Enviar</button>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			let dataRequest =  new XMLHttpRequest();
+			dataRequest.open("GET", "http://rest.learncode.academy/api/dyego/groups", true);
+			dataRequest.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					let data = JSON.parse(this.responseText);
+					for (let i = 0; i < data.length; i++) {
+						let contact = document.createElement("div");
+	            		let span1 = document.createElement("span");
+	            		let span2 = document.createElement("span");
+	            		let text1 = document.createTextNode(data[i].groupName);
+	            		let text2 = document.createTextNode(data[i].groupID);
+						let list1 = document.createElement("ul");
+						span1.appendChild(text1);
+	            		span2.appendChild(text2);
+	            		contact.appendChild(span1);
+	            		contact.appendChild(span2);
+						contact.appendChild(list1);
+	            		span1.classList.add("nome_contato")
+	            		span2.classList.add("id_grupo")
+	            		contact.classList.add("contact")
+	            		contact.classList.add("open_chat")
+						list1.classList.add("lista-mensagens")
+	            		contacts.appendChild(contact);
+	            		atualizar();
+					}
+					// document.getElementById("").innerHTML = this.responseText;
+				}
+			}
+			dataRequest.send();
+
+	        let open_chat = document.getElementsByClassName('open_chat');
+	        let chat = document.querySelector('.textbox');
+	        let close_chat = document.querySelector('.close_chat');
+	        let contacts = document.querySelector(".contacts");
+	        let nome_destinatario = document.querySelector('.nome_destinatario');
+	        
+	        function closeChat(){
+	            chat.style.display = 'none';
+	            close_chat.style.display = 'none';
+	            document.getElementById("destinatario").style.visibility="hidden";
+	            listaMensagens.innerHTML='';	        }
+	        function open_chatAction(a){
+	        	listaMensagens.innerHTML='';
+	        	let id = a.getElementsByClassName('nome_contato')[0].textContent;		
+	        	chat.style.display = 'block';
+	            close_chat.style.display = 'block';
+	            document.getElementById("destinatario").style.visibility="visible";
+	            document.getElementById("nome_destinatario").textContent=id;
+	            let groupID = a.getElementsByClassName("id_grupo")[0].textContent;
+				dataRequest.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						let data = JSON.parse(this.responseText); 
+						for (let i = 0; i < data.length; i++) {
+							let membro = data[i].userName;
+							let message = data[i].message;
+							let panel = document.createElement("div");
+							let panelHeading = document.createElement("div");
+							let panelBody = document.createElement("div");
+							let liContainer = document.createElement("li");
+							let conteudo = message;
+							let contido = document.createTextNode(conteudo);
+
+							let remetente = document.createTextNode(membro);
+
+							panel.classList.add("panel");
+							panel.classList.add("mensagemminha");
+							panelHeading.classList.add("panel-heading");
+							panelBody.classList.add("panel-body");
+							panelHeading.classList.add("panel");
+							panelBody.classList.add("panel");
+							panelBody.appendChild(contido);
+							panelHeading.appendChild(remetente);
+							panel.appendChild(panelHeading);
+							panel.appendChild(panelBody);
+							liContainer.appendChild(panel);
+							listaMensagens.appendChild(liContainer);
+							// document.querySelector('#textbox_inputtext').value='';
+							// let recuperaMensagem = liContainer.cloneNode(true);
+						}
+					}
+				}
+				let urlBase = "http://rest.learncode.academy/api/dyego/";
+				dataRequest.open("GET", urlBase+groupID, true);
+				dataRequest.send();
+				console.log(urlBase+groupID)
+	        }
+	        atualizar();
+
+	        function atualizar(){
+	        	for (let i = 0; i <open_chat.length; i++) {
+	        		open_chat[i].addEventListener('click', function(){
+	            	open_chatAction(open_chat[i]);
+
+	        		})
+	        	}
+	        }
+
+	        close_chat.addEventListener('click', function(){
+	            if (chat.style.display = 'block') {
+	            	closeChat();
+	            }
+	        })
+	        
+	     //    let openModal = document.querySelector(".open_modal");
+      //   	let modal = document.querySelector('.modal_adicionar_amigo');
+      //   	let modalOverlay = document.querySelector('.modal_overlay');
+    		// let modalClose = document.querySelector('.modal_close');
+    		// let inputContato = document.querySelectorAll('.input_contato');
+    		// let submeter = document.getElementById('submeter');
+
+    		// function closeModal(){
+   		 //    	modal.style.display = 'none';
+    	 //    	modalOverlay.style.display = 'none';
+    	 //    	modalClose.style.display = 'none';
+    	 //    	for (let i = 0; i <=2; i++) {
+      //       		inputContato[i].style.display = 'none';
+      //       		inputContato[i].value = "";
+      //       	};
+      //   	};
+
+    //     	function openModalAction(){
+    //         	modal.style.display = 'block';
+    //         	modalOverlay.style.display = 'block';
+    //         	modalClose.style.display = 'block';
+    //         	for (let i = 0; i <= 2; i++) {
+    //         		inputContato[i].style.display = 'block';
+    //         	};
+    //     	}
+
+    //     	openModal.addEventListener('click', function(){
+    //         	openModalAction();
+    //     	});
+
+    //     	modalClose.addEventListener('click', function(){
+    //         	closeModal();
+    //     	});
+
+    //     	function addContact(name, email){
+	   //          let contact = document.createElement("div");
+	   //          let span1 = document.createElement("span");
+	   //          let span2 = document.createElement("span");
+	   //          let text1 = document.createTextNode(name);
+	   //          let text2 = document.createTextNode(email);
+				// let list1 = document.createElement("ul");
+				// span1.appendChild(text1);
+	   //          span2.appendChild(text2);
+	   //          contact.appendChild(span1);
+	   //          contact.appendChild(span2);
+				// contact.appendChild(list1);
+	   //          span1.classList.add("nome_contato")
+	   //          contact.classList.add("contact")
+	   //          contact.classList.add("open_chat")
+				// list1.classList.add("lista-mensagens")
+	   //          contacts.appendChild(contact);
+	   //          atualizar();
+	   //      }
+	        
+	   //      let adicionarAmigo = document.querySelector("#adicionar_amigo");
+	   //      let nomeInput = document.querySelector("#inputNome");
+	   //      let emailInput = document.querySelector("#inputEmail");
+	   //      submeter.addEventListener('click',function(){
+	   //          event.preventDefault();
+	   //          addContact(nomeInput.value, emailInput.value);
+	   //          closeModal();
+	   //      });
+
+			let listaMensagens = document.querySelector('.lm-ativa');
+			let enviarMensagem = document.querySelector('#enviar-mensagem');
+
+			enviarMensagem.addEventListener('click', function(){
+				let panel = document.createElement("div");
+				let panelHeading = document.createElement("div");
+				let panelBody = document.createElement("div");
+				let liContainer = document.createElement("li");
+				let conteudo = document.querySelector('#textbox_inputtext').value;
+				let contido = document.createTextNode(conteudo);
+				let remetente = document.createTextNode('Eu');
+				panel.classList.add("panel");
+				panel.classList.add("mensagemminha");
+				panelHeading.classList.add("panel-heading");
+				panelBody.classList.add("panel-body");
+				panelHeading.classList.add("panel");
+				panelBody.classList.add("panel");
+				panelBody.appendChild(contido);
+				panelHeading.appendChild(remetente);
+				panel.appendChild(panelHeading);
+				panel.appendChild(panelBody);
+				liContainer.appendChild(panel);
+				listaMensagens.appendChild(liContainer);
+				document.querySelector('#textbox_inputtext').value='';
+				let recuperaMensagem = liContainer.cloneNode(true);
+			})
+	    </script>
+	</body>
+</html>
