@@ -32,18 +32,70 @@
 			margin-left: 113px;
 		}
 		.login_button{
+			/* cursor: pointer; */
 			width: 100px;
 			height: 40px;
 			color: #0f358e;
 			font-size: 18pt;
 			font-weight: bold;
 			background-color: whitesmoke;
+			transition: background-color .2s ease-in;
 			padding-top: 10px;
 			float: right;
 			margin-right: 20px;
 			margin-top: 15px;
 			box-shadow: -8px 8px 0px 1px rgba(0,0,0,1);
+			user-select: none;
 		}
+		.none{
+			display: none;
+		}
+		.logout_button{
+			cursor: pointer;
+			width: 100px;
+			height: 40px;
+			color: #0f358e;
+			font-size: 18pt;
+			font-weight: bold;
+			background-color: whitesmoke;
+			transition: background-color .2s ease-in;
+			padding-top: 10px;
+			float: right;
+			margin-right: 20px;
+			margin-top: 15px;
+			box-shadow: -8px 8px 0px 1px rgba(0,0,0,1);
+			user-select: none;
+		}
+			.login_button:hover {
+				color: whitesmoke;
+				background-color: #0f358e;
+
+			}
+				.dropdown_content{
+					display: none;
+					position: absolute;
+					margin-left: 780px;
+					color: #0f358e;
+					background-color: whitesmoke;
+					height: 80px;
+					width: 100px;
+					z-index: 10;
+					box-shadow: -8px 8px 0px 1px rgba(0,0,0,1);
+					margin-top: 65px;
+				}
+						.dropdown_content>input{
+						border: none;
+						width: 80px;
+						margin-top: 14px;
+						color: ghostwhite;
+						font-weight: bolder;
+						background-color: #0f358e;
+						/* margin-left: 10px; */
+					}
+					.dropdown:hover .dropdown_content{
+						display: block;
+					}
+
 	.amigos{
 		padding: 5px;
 		position: relative;
