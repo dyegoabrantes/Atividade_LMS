@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Galeria de produtos</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!-- Boostrap JS and dependecies -->
+	<script  src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous" defer></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous" defer></script>
+	<!-- Meu JS -->
+	<script type="text/javascript" src="js.js" defer></script>
+	<!-- Meu CSS -->
+	<link rel="stylesheet" href="css.css"></link>
+	</script>
+</head>
+<body>
+    <div class="row">
+    	<nav class="container-fluid navbar">
+			<div class="col-md-8">
+			    <h2>Pedras do Brasil</h2>
+		    </div>
+		    <div class="col-md-2">
+		    	<div class="botaoFinalizar hidden">
+		            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minhas Compras</button>
+		            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		            	<div class="col-md-12 carro">
+		            		<p id="textoA">Você ainda não adicionou nenhum produto :(</p>
+		            	</div>
+		                <button id="finalizar" type="submit" class="btn btn-primary col-md-12 hidden">Finalizar Compras</button>
+		            </div>
+		        </div>
+		    	<div class="cadastro">
+		    		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCadastro" data-toggle="dropdown" aria-haspopup="true" value="" aria-expanded="false">Cadastrar</button>
+		    		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    			<form id="formCad">
+		    				<div class="form-group">
+		    					<label for="inputUsuario">Insira um nome de Usuário</label>
+		    					<input type="text" class="form-control" id="setUsuario" placeholder="Usuário aqui" required>
+		    				</div>
+		    				<div class="form-group">
+		    					<label for="inputPasword">Insira uma senha</label>
+		    					<input type="password" class="form-control" id="setPasword" placeholder="Senha aqui">
+		    				</div>
+		    				<button id="cadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
+		    			</form>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="col-md-2">
+		    	<div class="sair hidden">
+		    		<button class="btn" type="button" id="botaoSair">Sair</button>
+		    	</div>
+			    <div class="login">
+		            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" value="notLoged" aria-expanded="false">Entrar</button>
+		            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		                <form id="formLog">
+		                    <div class="form-group">
+		                        <label for="inputUsuario">Nome de Usuário</label>
+		                        <input type="text" class="form-control" id="inputUsuario" aria-describedby="emailHelp" placeholder=" Insira usuário">
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="inputPasword">Senha</label>
+		                        <input type="password" class="form-control" id="inputPasword" placeholder="Insira senha">
+		                    </div>
+		                    <button id="logar" type="submit" class="btn btn-primary col-md-12">Entrar</button>
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+    	</nav>
+    </div>
+    <div class="row display">
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="diamond.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Diamante</h4>
+                    <p class="card-text">Mais bela forma do carbono.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">500.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="granada.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Granada</h4>
+                    <p class="card-text">Exploda as inimigas!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">300.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="opala.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Opala</h4>
+                    <p class="card-text">Resplandeça</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">110.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="rubelita.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Rubelita</h4>
+                    <p class="card-text">Ganhe o amor de todxs!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">500.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+    </div>
+    <div class="row display">
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Safira.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Safira</h4>
+                    <p class="card-text">A magia da natureza</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">300.000,00</span></li>
+                </ul>
+                <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="tanzanita.png"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Tanzanita</h4>
+                    <p class="card-text">Luxo e exuberância</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">90.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="topazio_imperial.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Topázio Imperial</h4>
+                    <p class="card-text">O poder do Sol</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">110.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+			<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="turmalina paraiba.jpg"  alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Turmalina Paraíba</h4>
+                    <p class="card-text">Beleza rara e arretada</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>R$</span><span class="valor">500.000,00</span></li>
+                </ul>
+            <div class="card-body hidden buy">
+            	<div class="row">
+            		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
+                    <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
+            	</div>
+            </div>
+            </div>
+		</div>
+    </div>
+</body>
+</html>

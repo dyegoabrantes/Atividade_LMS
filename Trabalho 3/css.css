@@ -1,0 +1,63 @@
+.dropdown-menu{
+	padding: 10px;
+	left: -40px;
+	background-color: #00897b;
+}
+.dropdown{
+	
+}
+#dropdownCadastro{
+	background-color: ;
+}
+
+.navbar{
+	user-select: none;
+	background-color: #004d40;
+}
+	.navbar h2{
+		color: #ffd54f;
+	}
+	.dropdown-toggle{
+		background-color: #009688;
+	}
+		.dropdown-toggle:hover{
+			background-color: #26a69a;
+		}
+		.btn-secondary{
+			background-color: #4db6ac;
+		}
+		#logar, #cadastrar, #finalizar{
+			background-color: #ffa000;
+		}
+		.hidden{
+			display: none;
+		}
+		#botaoSair{
+			cursor: pointer;
+		}
+.display{
+	text-align: center;
+		margin-top: 30px;
+		padding:  10px;
+}
+.list-group-item{
+	color: #aed581;
+	font-weight: bolder;
+	font-size: 18pt;
+}
+
+.adccart{
+	background-color: #dcedc8;
+	border: none;
+	width: 110px;
+	margin-left: 10px;
+}
+#quantidade{
+	margin-left: 8px;
+	background-color: #ffd54f;
+	border: none;
+	padding: 5px;
+}
+	.adccart:hover{
+		background-color: #aed581;
+	}
