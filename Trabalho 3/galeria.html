@@ -25,13 +25,11 @@
 		    </div>
 		    <div class="col-md-2">
 		    	<div class="botaoFinalizar hidden">
-		            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minhas Compras</button>
-		            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		            	<div class="col-md-12 carro">
-		            		<p id="textoA">Você ainda não adicionou nenhum produto :(</p>
-		            	</div>
-		                <button id="finalizar" type="submit" class="btn btn-primary col-md-12 hidden">Finalizar Compras</button>
-		            </div>
+		            <button class="btn btn-secondary dropdown-toggle minhas-compras" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minhas Compras</button>
+		            <div class="dropdown-menu bloco" aria-labelledby="dropdownMenuButton">
+		            	<div class="container-fluid carro"></div>
+		                <button id="finalizar" type="submit" class="btn btn-primary">Finalizar Compras</button>
+		        	</div>
 		        </div>
 		    	<div class="cadastro">
 		    		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCadastro" data-toggle="dropdown" aria-haspopup="true" value="" aria-expanded="false">Cadastrar</button>
@@ -76,9 +74,9 @@
     <div class="row display">
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="diamond.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="diamond.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Diamante</h4>
+                    <h4 class="card-title pName">Diamante</h4>
                     <p class="card-text">Mais bela forma do carbono.</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -94,9 +92,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="granada.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="granada.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Granada</h4>
+                    <h4 class="card-title pName">Granada</h4>
                     <p class="card-text">Exploda as inimigas!</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -112,9 +110,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="opala.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="opala.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Opala</h4>
+                    <h4 class="card-title  pName">Opala</h4>
                     <p class="card-text">Resplandeça</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -130,9 +128,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="rubelita.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="rubelita.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Rubelita</h4>
+                    <h4 class="card-title pName">Rubelita</h4>
                     <p class="card-text">Ganhe o amor de todxs!</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -140,6 +138,7 @@
                 </ul>
             <div class="card-body hidden buy">
             	<div class="row">
+					
             		<input id="quantidade" type="number" min="1" max="50" placeholder="quantidade" value="1" class="col-md-5">
                     <button type="button" class="btn btn-primary adccart col-md-6"><img src="cart.svg" alt=""></button>
             	</div>
@@ -150,9 +149,9 @@
     <div class="row display">
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Safira.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="Safira.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Safira</h4>
+                    <h4 class="card-title pName">Safira</h4>
                     <p class="card-text">A magia da natureza</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -168,9 +167,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="tanzanita.png"  alt="Card image cap">
+                <img class="card-img-top pImage" src="tanzanita.png"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Tanzanita</h4>
+                    <h4 class="card-title  pName">Tanzanita</h4>
                     <p class="card-text">Luxo e exuberância</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -186,9 +185,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="topazio_imperial.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="topazio_imperial.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Topázio Imperial</h4>
+                    <h4 class="card-title pName">Topázio Imperial</h4>
                     <p class="card-text">O poder do Sol</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -204,9 +203,9 @@
 		</div>
 		<div class="col-md-3">
 			<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="turmalina paraiba.jpg"  alt="Card image cap">
+                <img class="card-img-top pImage" src="turmalina paraiba.jpg"  alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title">Turmalina Paraíba</h4>
+                    <h4 class="card-title pName">Turmalina Paraíba</h4>
                     <p class="card-text">Beleza rara e arretada</p>
                 </div>
                 <ul class="list-group list-group-flush">

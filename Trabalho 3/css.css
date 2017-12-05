@@ -1,5 +1,5 @@
 .dropdown-menu{
-	padding: 10px;
+	padding: 5px;
 	left: -40px;
 	background-color: #00897b;
 }
@@ -40,6 +40,9 @@
 		margin-top: 30px;
 		padding:  10px;
 }
+.card{
+	float: left;
+}
 .list-group-item{
 	color: #aed581;
 	font-weight: bolder;
@@ -61,3 +64,16 @@
 	.adccart:hover{
 		background-color: #aed581;
 	}
+
+.foto, .nomeP, .valorP, .quantidadeP{
+	padding: 2px;
+}
+.carro{
+	width: 350px;
+}
+#finalizar{
+	display: inline-block;
+}
+.bloco{
+	text-align: center;
+}
