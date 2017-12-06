@@ -28,22 +28,27 @@
 		            <button class="btn btn-secondary dropdown-toggle minhas-compras" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minhas Compras</button>
 		            <div class="dropdown-menu bloco" aria-labelledby="dropdownMenuButton">
 		            	<div class="container-fluid carro"></div>
-		                <button id="finalizar" type="submit" class="btn btn-primary">Finalizar Compras</button>
+		                <button type="submit" class="btn btn-primary finalizar">Finalizar Compras</button>
 		        	</div>
 		        </div>
 		    	<div class="cadastro">
 		    		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownCadastro" data-toggle="dropdown" aria-haspopup="true" value="" aria-expanded="false">Cadastrar</button>
 		    		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		    			<form id="formCad">
-		    				<div class="form-group">
-		    					<label for="inputUsuario">Insira um nome de Usuário</label>
-		    					<input type="text" class="form-control" id="setUsuario" placeholder="Usuário aqui" required>
+		    			<form class="container" id="needs-validation" novalidate>
+		    				<div class="row">
+		    					<div id="forUser" class="form-group col-md-12 mb-3">
+		    						<label for="setUsuario">Insira um nome de Usuário</label>
+		    						<input type="text" class="form-control" id="setUsuario" placeholder="Usuário aqui" required>
+		    						<label id="labelErro1" class="control-label" for="setUsuario">Insira um nome de usuário</label>
+
+		    					</div>
+		    					<div id="forPassword" class="col-md-12 mb-3">
+		    						<label for="setPasword">Insira uma senha</label>
+		    						<input type="password" class="form-control" id="setPasword" placeholder="Senha aqui" required>
+		    						<label id="labelErro2" class="control-label" for="setPasword">Insira uma senha</label>
+		    					</div>
 		    				</div>
-		    				<div class="form-group">
-		    					<label for="inputPasword">Insira uma senha</label>
-		    					<input type="password" class="form-control" id="setPasword" placeholder="Senha aqui">
-		    				</div>
-		    				<button id="cadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
+		    				<button id="cadastrar" type="submit" class="disabled btn btn-primary col-md-12">Cadastrar</button>
 		    			</form>
 		    		</div>
 		    	</div>
@@ -56,15 +61,17 @@
 		            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" value="notLoged" aria-expanded="false">Entrar</button>
 		            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		                <form id="formLog">
-		                    <div class="form-group">
+		                    <div id="username" class="form-group">
 		                        <label for="inputUsuario">Nome de Usuário</label>
-		                        <input type="text" class="form-control" id="inputUsuario" aria-describedby="emailHelp" placeholder=" Insira usuário">
+		                        <input type="text" class="form-control" id="inputUsuario" aria-describedby="emailHelp" placeholder=" Insira usuário" required>
+		                        <label id="labelErroA" class="control-label" for="setPasword">Insira seu usuário</label>
 		                    </div>
-		                    <div class="form-group">
+		                    <div id="userpassword" class="form-group">
 		                        <label for="inputPasword">Senha</label>
-		                        <input type="password" class="form-control" id="inputPasword" placeholder="Insira senha">
+		                        <input type="password" class="form-control" id="inputPasword" placeholder="Insira senha" required>
+		                        <label id="labelErroB" class="control-label" for="setPasword">Insira sua senha</label>
 		                    </div>
-		                    <button id="logar" type="submit" class="btn btn-primary col-md-12">Entrar</button>
+		                    <button id="logar" type="submit" class="disabled btn btn-primary col-md-12">Entrar</button>
 		                </form>
 		            </div>
 		        </div>

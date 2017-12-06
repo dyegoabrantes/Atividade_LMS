@@ -26,13 +26,12 @@
 		.btn-secondary{
 			background-color: #4db6ac;
 		}
-		#logar, #cadastrar, #finalizar{
+		#logar, #cadastrar, .finalizar{
 			background-color: #ffa000;
+			cursor: pointer;
 		}
-		.hidden{
-			display: none;
-		}
-		#botaoSair{
+		
+		#botaoSair, .home{
 			cursor: pointer;
 		}
 .display{
@@ -68,12 +67,37 @@
 .foto, .nomeP, .valorP, .quantidadeP{
 	padding: 2px;
 }
-.carro{
-	width: 350px;
-}
-#finalizar{
+
+.finalizar{
 	display: inline-block;
 }
 .bloco{
 	text-align: center;
+	width: 350px;
+}
+.hidden{
+	display: none;
+}
+.fotoA, .nome,.valor, .valorDp, .quantidade{
+	float: left;
+	padding: 20px;
+}
+.produto{
+	border: solid;
+	margin-top: 5px;
+	border-width: 1px;
+	border-color: darkgoldenrod;
+}
+.total{
+	margin-left: 50px;
+}
+.Fcompra{
+	background-color: #ffca28;
+	cursor: pointer;
+	margin: 40px;
+}
+h4{text-align: center}
+#labelErro1, #labelErro2, #labelErroA, #labelErroB{
+	color: ghostwhite;
+	background-color: red;
 }
